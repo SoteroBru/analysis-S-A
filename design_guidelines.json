@@ -1,0 +1,115 @@
+{
+  "theme": "light",
+  "archetype": "4",
+  "archetype_name": "Swiss & High-Contrast (Premium Corporate Finance)",
+  "design_philosophy": "Aesthetic conviction over compromise. A trust-first architecture focusing on institutional credibility, sophisticated data presentation, and premium corporate positioning. Avoids generic SaaS aesthetics in favor of 'Old Money Tech' - conveying authority, stability, and high-end B2B consultancy.",
+  "colors": {
+    "background": "#F8F9FA",
+    "surface": "#FFFFFF",
+    "primary": "#0A2540",
+    "primary_foreground": "#FFFFFF",
+    "secondary": "#C89D66",
+    "secondary_foreground": "#FFFFFF",
+    "accent": "#E2E8F0",
+    "text_main": "#0F172A",
+    "text_muted": "#475569",
+    "border": "#E2E8F0",
+    "success": "#10B981"
+  },
+  "typography": {
+    "font_strategy": "The 'Old Money Tech' Pair: Classic Serif Head + Clean Sans Body",
+    "headings": {
+      "family": "Playfair Display, serif",
+      "weight": "font-bold",
+      "tracking": "tracking-tight"
+    },
+    "body": {
+      "family": "IBM Plex Sans, sans-serif",
+      "weight": "font-normal",
+      "tracking": "tracking-normal"
+    },
+    "scale": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl leading-tight",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl leading-tight",
+      "h3": "text-xl sm:text-2xl",
+      "body": "text-base md:text-lg text-slate-600",
+      "labels": "text-xs tracking-[0.2em] uppercase font-bold text-slate-500"
+    }
+  },
+  "spacing_and_layout": {
+    "philosophy": "Generous spacing. Tailwind scale heavily relying on p-8, p-12, p-16, p-24 for macro sections to create breathing room. Container layouts should feel structural and deliberate, utilizing strict grid systems.",
+    "bento_grid": "For the 'Tipos de Garantias' section, use MODE B: THE CONTROL ROOM GRID strategy adapted for marketing. grid-cols-1 md:grid-cols-2 lg:grid-cols-4 with gap-6. Flat solid cards with sharp 1px borders.",
+    "hero_overlay": "For hero images: bg-primary/70 or a dark gradient to ensure text readability while allowing the premium corporate imagery to shine."
+  },
+  "components": {
+    "buttons": "Flat, sharp edges or rounded-sm (max 4px). High contrast. Primary CTA uses Deep Navy (#0A2540) or Metallic Gold/Ochre (#C89D66) on hover. Always explicitly set hover text color.",
+    "cards": "Solid white backgrounds, 1px subtle border (border-slate-200), zero or very diffuse ambient shadow (shadow-sm). Hover state adds subtle lift (-translate-y-1) and shadow-lg.",
+    "navigation": "Sticky header (z-50) using Glassmorphism (Crystal clear, backdrop-blur-xl bg-white/90) with a 1px delicate bottom border (border-slate-200/50).",
+    "icons": "Use lucide-react (stroke-width: 1.5) for a sophisticated, lightweight technical look."
+  },
+  "pages": {
+    "home": {
+      "sections": [
+        "Hero: Full width banner, Playfair Display heading, strong dual CTAs ('Solicitar Cotação', 'Fale com Especialista'), corporate skyscraper background.",
+        "Trust Bar: 'Mais de 10 anos de experiência' + logos/stats.",
+        "Vantagens: 6 items grid with clean icons.",
+        "Garantias (Serviços): Bento grid of the 8 types of guarantees.",
+        "CTA Section: High contrast (Navy bg, white text, Gold button).",
+        "Blog/Notícias: Latest 3 insights/news items.",
+        "Footer: Deep Navy background, corporate info, links, address."
+      ]
+    }
+  },
+  "image_urls": {
+    "hero_background": {
+      "url": "https://images.unsplash.com/photo-1776617130025-df2d5288107a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA4Mzl8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjBvZmZpY2UlMjBidWlsZGluZyUyMGNvcnBvcmF0ZSUyMHNreWxpbmV8ZW58MHx8fHwxNzc4Nzk5MjI3fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Modern skyscraper against clear blue sky - use as Hero background with dark overlay",
+      "category": "hero"
+    },
+    "about_section": {
+      "url": "https://images.unsplash.com/photo-1622675363311-3e1904dc1885?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHwzfHxidXNpbmVzcyUyMHByb2Zlc3Npb25hbHMlMjBtZWV0aW5nfGVufDB8fHx8MTc3ODc5OTIyN3ww&ixlib=rb-4.1.0&q=85",
+      "description": "Business professionals meeting - Use for 'Sobre Nós' or trust section",
+      "category": "about"
+    },
+    "contact_section": {
+      "url": "https://images.unsplash.com/photo-1764160233831-694591688066?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA4Mzl8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBvZmZpY2UlMjBidWlsZGluZyUyMGNvcnBvcmF0ZSUyMHNreWxpbmV8ZW58MHx8fHwxNzc4Nzk5MjI3fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Modern buildings with reflective windows - use as background for contact/CTA banner",
+      "category": "contact"
+    }
+  },
+  "content_requirements": {
+    "language": "pt-BR",
+    "contact_info": {
+      "phone": "(11) 3554-0537",
+      "email": "atendimento@analysissa.com.br",
+      "address": "R. Augusta, 1939 - 6º andar - CJ. 61 - Cerqueira César, São Paulo - SP, 01413-100"
+    },
+    "guarantees_list": [
+      "Licitações",
+      "Judicial",
+      "Concessão",
+      "Execução",
+      "Imobiliária",
+      "Adiantamento de Pagamento",
+      "Compra e venda de energia",
+      "Concorrência"
+    ],
+    "advantages_list": [
+      "Melhor alternativa à fiança bancária e depósito em dinheiro",
+      "Não utiliza seu limite de crédito no banco",
+      "Contratação rápida e descomplicada",
+      "Flexibilizamos a avaliação de riscos, aceitando propostas recusadas por seguradoras",
+      "Agilidade na resposta do cadastro",
+      "Mais de 10 anos de experiência, preservando a ética nas transações"
+    ]
+  },
+  "technical_instructions_to_main_agent": [
+    "Use react-router-dom for multi-page routing.",
+    "Implement a WhatsApp floating button fixed to bottom right (z-50).",
+    "Use framer-motion for subtle entrance animations (staggered fade-up) typical of premium corporate sites.",
+    "Implement the contact form purely visually (UI only, no backend).",
+    "Ensure all interactive elements have data-testid attributes (e.g., data-testid='hero-cta-button').",
+    "Use Shadcn UI primitives for all forms.",
+    "Use lucide-react for all iconography to maintain a clean, high-end look."
+  ]
+}
