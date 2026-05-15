@@ -1,0 +1,42 @@
+{
+  "summary": "Comprehensive frontend testing of Analysis S.A. institutional site. All 6 routes, navigation, CTAs, contact form, blog navigation, hash-scroll to guarantee anchors, WhatsApp floating button, mobile menu, and footer verified successfully. No console/page errors detected. No backend integration (frontend-only site as requested).",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [
+      {
+        "flow": "Contact form empty-state validation",
+        "issue": "The custom toast 'Preencha nome, e-mail e mensagem.' never fires because the HTML5 `required` attribute on name/email/message inputs blocks form submission first. The JS-level validation in submit() is effectively dead code. Functionally OK (browser shows native tooltip), but the design intent of a Sonner error toast is not delivered. To fix: remove the `required` attribute and rely on the JS validation + toast, OR remove the JS check.",
+        "affected_selectors": ["[data-testid=\"form-submit\"]", "[data-testid=\"form-name\"]"]
+      }
+    ],
+    "design_issues": [
+      {
+        "screen": "Global",
+        "issues": [
+          "CONTACT.whatsapp in /app/frontend/src/data/site.js is a placeholder '5511999999999' — must be replaced with the real Analysis S.A. WhatsApp number before launch.",
+          "Footer 'Modalidades' shows only 6 of 8 guarantees (slice(0,6)). Concorrência and Compra/Venda de Energia are not linked from footer. Confirm with client if intentional."
+        ]
+      }
+    ]
+  },
+  "test_report_links": [],
+  "action_items": [
+    "Replace placeholder WhatsApp number (CONTACT.whatsapp) in /app/frontend/src/data/site.js with the real number.",
+    "Decide between HTML5 `required` validation OR custom Sonner toast in Contato.jsx — currently the toast path is unreachable for empty submits.",
+    "Optionally include all 8 guarantees in Footer (remove slice(0,6)) if business agrees."
+  ],
+  "critical_code_review_comments": [
+    "Home.jsx is ~500 lines — could split hero, advantages, guarantees-bento, cta, blog-teaser into smaller components for maintainability.",
+    "Hash scroll in Garantias.jsx uses setTimeout 200ms — works, but consider using `scroll-mt-28` (already present) plus a CSS `scroll-behavior:smooth` on html for native UX.",
+    "Form 'value' field accepts free text — consider a currency mask for better data quality."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (no backend)", "frontend": "100%"},
+  "test_credentials": "none required",
+  "seed_data_creation": "none",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Site is frontend-only. Public preview URL: https://moderno-finance-1.preview.emergentagent.com. Use data-testid selectors documented in review_request. Verified: home (hero/stats/6 advantages/8 guarantees/3 blog teasers), header sticky + CTA, all 6 NAV routes, /carta-de-fianca, hash-scroll #licitacoes from home guarantee card works, blog list + post + back-to-blog, contact form submit success toast (Sonner), modality Select dropdown, WhatsApp floating button expands card with wa.me href, mobile hamburger nav, footer with 6 nav + 6 guarantee links, 404 page. Known minor: HTML5 required preempts custom toast for empty submit; WhatsApp number is placeholder.",
+  "rca_of_the_issue": "Empty-submit toast unreachable: Form uses both `required` HTML5 attribute and `if (!form.name ...) toast.error(...)`. Browsers stop submission at the first invalid required field and show the native bubble, so the JS handler never runs for empty fields. Mitigation: remove `required` from name/email/message inputs (keep the JS check) to use Sonner toast consistently, or simply rely on the native HTML5 validation and delete the JS check."
+}
